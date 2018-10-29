@@ -1,4 +1,4 @@
-#eNodeB emulator XOS service
+# eNodeB emulator XOS service
 
 It is based on the vBBU XOS service for CORD 4.0
 **Synchronizer code, XProto Models and Policies** are generic.
@@ -11,6 +11,6 @@ It is based on the vBBU XOS service for CORD 4.0
 This repo is part of a *CORD 4.0* deployment, the service needs to be cloned into the `cord/orchestration/xos-services/` directory before starting XOS.
 After cloning, rename the folder to **vbbu**
 
-**To DO** Erase all the vbbu references to avoid any cause of confusion about the functionality of this service. 
+**To DO** Erase all the vbbu references to avoid any cause of confusion about the functionality of this service.
 
 I plan to include a script to facilitate integration of this service with a CORD deployment.
