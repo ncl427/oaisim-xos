@@ -2,9 +2,9 @@
 
 This section contains the Ansible playbook instructions that are going to be applied when deploying the **OAISIM Virtual Machine (VNF)**
 
-The **pre-requirement** section sets the Linux Host name of the machine to *vbbu* in order to easily identified in console.
+The **pre-requirement** section sets the Linux Host name of the machine to *oaisim* in order to easily identified in console.
 
-The **bbu-configure** section has the actual playbook instructions for *VM deployment* and is organized as follows:
+The **oaisim-configure** section has the actual playbook instructions for *VM deployment* and is organized as follows:
 - defaults
 - tasks
 - templates
