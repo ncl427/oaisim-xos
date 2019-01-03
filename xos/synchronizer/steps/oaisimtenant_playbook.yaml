@@ -14,4 +14,22 @@
 # limitations under the License.
 
 
-python oaisim-synchronizer.py
+---
+# oaisimserviceinstance_playbook
+
+- hosts: {{ instance_name }}
+  gather_facts: False 
+  connection: ssh
+  user: ubuntu
+  sudo: yes
+  vars:
+    - ENB_PRIVATE_IP: "{{ ENB_PRIVATE_IP }}"
+    - MME_PRIVATE_IP: "10.0.6.2"
+    - SPGWU_PRIVATE_IP_LIST:
+    {% for item in SPGWC_IP_LIST %}
+      - "{{ item }}"
+    {% endfor %}
+#   ENB_PUBLIC_IP: "{{ ENB_PUBLIC_IP }}"
+  roles:
+    - pre-requirement
+    - oaisim-configure

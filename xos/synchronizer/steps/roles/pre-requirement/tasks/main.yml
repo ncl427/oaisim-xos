@@ -1,4 +1,4 @@
 
-- name: set host name of vbbu
+- name: set host name of eNB
   hostname:
-    name: "vbbu"
+    name: "oaisim"

@@ -1,6 +1,6 @@
 # Sets options for the synchronizer
 [observer]
-name=vbbu
+name=oaisim
 dependency_graph=/opt/xos/synchronizers/vbbu/model-deps
 steps_dir=/opt/xos/synchronizers/vbbu/steps
 sys_dir=/opt/xos/synchronizers/vbbu/sys

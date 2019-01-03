@@ -1,0 +1,11 @@
+
+REALM: openair4G.eur
+OAISIM_HOST: oaisim
+
+MCC: 208
+MNC: 93
+TAC: 1
+MME_GID: 4
+MME_CODE: 1
+
+SPGW_IPV4_LIST: 192.168.3.0/24

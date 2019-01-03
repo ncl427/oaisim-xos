@@ -14,4 +14,8 @@
 # limitations under the License.
 
 
-python oaisim-synchronizer.py
+from synchronizers.new_base.modelaccessor import *
+from synchronizers.new_base.model_policies.model_policy_tenantwithcontainer import TenantWithContainerPolicy
+
+class VBBUServiceInstancePolicy(TenantWithContainerPolicy):
+    model_name = "VBBUServiceInstance"

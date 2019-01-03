@@ -14,4 +14,11 @@
 # limitations under the License.
 
 
-python oaisim-synchronizer.py
+name: oaisim-synchronizer
+accessor:
+  username: xosadmin@opencord.org
+  password: "@/opt/xos/services/oaisim/credentials/xosadmin@opencord.org"
+dependency_graph: "/opt/xos/synchronizers/oaisim/model-deps"
+steps_dir: "/opt/xos/synchronizers/oaisim/steps"
+sys_dir: "/opt/xos/synchronizers/oaisim/sys"
+model_policies_dir: "/opt/xos/synchronizers/oaisim/model_policies"
