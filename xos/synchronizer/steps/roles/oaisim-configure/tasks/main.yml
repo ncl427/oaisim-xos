@@ -6,14 +6,14 @@
 
 - name: set oai component interfaces
   set_fact:
-    BBU_INTERFACE: "{{SERVICE_INTERFACE.stdout}}"
+    ENB_INTERFACE: "{{SERVICE_INTERFACE.stdout}}"
 
 - name: overwrite oai eNodeB configs
   template:
     src: "{{item.src}}"
     dest: "{{item.dest}}"
   with_items:    
-    - { src: 'bbu.j2', dest: '/home/ubuntu/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.generic.oaisim.local_mme.conf' }
+    - { src: 'oaisim.j2', dest: '/home/ubuntu/openairinterface5g/targets/PROJECTS/GENERIC-LTE-EPC/CONF/enb.band7.generic.oaisim.local_mme.conf' }
 
 - name: set hosts
   lineinfile:
@@ -21,5 +21,5 @@
     line: "{{item.line}}"
     regexp: "{{item.regex}}"
   with_items:
-    - { regex: "{{BBU_HOST}}", line: '{{BBU_PRIVATE_IP}} {{BBU_HOST}}' }
+    - { regex: "{{ENB_HOST}}", line: '{{ENB_PRIVATE_IP}} {{ENB_HOST}}' }
  

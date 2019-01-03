@@ -24,22 +24,22 @@ sys.path.insert(0, parentdir)
 
 logger = Logger(level=logging.INFO)
 
-class SyncVBBUTenant(SyncInstanceUsingAnsible):
+class SyncOAISIMTenant(SyncInstanceUsingAnsible):
 
-    provides = [VBBUTenant]    
+    provides = [OAISIMTenant]    
 
-    observes = VBBUTenant
+    observes = OAISIMTenant
 
     requested_interval = 0
 
-    template_name = "vbbutenant_playbook.yaml"
+    template_name = "oaisimtenant_playbook.yaml"
 
     service_key_name = "/opt/xos/configurations/mcord/mcord_private_key"
 
     watches = [ModelLink(ServiceDependency,via='servicedependency'), ModelLink(ServiceMonitoringAgentInfo,via='monitoringagentinfo')]
 
     def __init__(self, *args, **kwargs):
-        super(SyncVBBUTenant, self).__init__(*args, **kwargs)
+        super(SyncOAISIMTenant, self).__init__(*args, **kwargs)
 
     def get_network_id(self, network_name):
         network = Network.objects.filter(name=network_name).first()
@@ -72,8 +72,8 @@ class SyncVBBUTenant(SyncInstanceUsingAnsible):
         fields = {}
 
         collect_network = [
-           {'name': 'BBU_PRIVATE_IP', 'net_name': 'vbbu_network'}
-#	   {'name': 'BBU_PUBLIC_IP', 'net_name': 'public'} # May be Required
+           {'name': 'ENB_PRIVATE_IP', 'net_name': 'oaisim_network'}
+#	   {'name': 'ENB_PUBLIC_IP', 'net_name': 'public'} # May be Required
         ]
 
         instance = self.get_instance_object(o.instance_id)

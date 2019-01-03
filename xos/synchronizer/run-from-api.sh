@@ -14,4 +14,4 @@
 # limitations under the License.
 
 
-python vbbu-synchronizer.py
+python oaisim-synchronizer.py

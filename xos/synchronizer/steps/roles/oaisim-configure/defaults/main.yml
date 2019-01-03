@@ -1,6 +1,6 @@
 
 REALM: openair4G.eur
-BBU_HOST: vbbu
+ENB_HOST: oaisim
 
 MCC: 208
 MNC: 93

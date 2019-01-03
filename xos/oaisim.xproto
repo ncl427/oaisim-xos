@@ -1,11 +1,11 @@
-option app_label = "vBBU";
-option name = "vbbu";
+option app_label = "OAISIM";
+option name = "oaisim";
 
-message VBBUService (Service){
+message OAISIMService (Service){
     option verbose_name = "eNodeB";
 }
 
-message VBBUVendor (XOSBase){
+message OAISIMVendor (XOSBase){
     option verbose_name = "eNodeB Vendor";
 
     required string name = 1 [help_text = "vendor name", max_length = 32, null = False, db_index = False, blank = False]; 
@@ -13,8 +13,8 @@ message VBBUVendor (XOSBase){
     required manytoone flavor->Flavor:+ = 3 [help_text = "select openstack flavor for vendor image", db_index = True, null = False, blank = False];
 }
 
-message VBBUTenant (TenantWithContainer){
+message OAISIMTenant (TenantWithContainer){
     option verbose_name = "eNodeB Instance";
 
-    optional manytoone vbbu_vendor->VBBUVendor:vendor_tenants = 1 [help_text = "select vendor of choice, leave blank for slice default", db_index = True, null = True, blank = True]; 
+    optional manytoone oaisim_vendor->OAISIMVendor:vendor_tenants = 1 [help_text = "select vendor of choice, leave blank for slice default", db_index = True, null = True, blank = True]; 
 }

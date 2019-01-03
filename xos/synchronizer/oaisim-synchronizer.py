@@ -14,22 +14,21 @@
 # limitations under the License.
 
 
----
-# vbbuserviceinstance_playbook
+#!/usr/bin/env python
 
-- hosts: {{ instance_name }}
-  gather_facts: False 
-  connection: ssh
-  user: ubuntu
-  sudo: yes
-  vars:
-    - BBU_PRIVATE_IP: "{{ BBU_PRIVATE_IP }}"
-    - MME_PRIVATE_IP: "10.0.6.2"
-    - SPGWU_PRIVATE_IP_LIST:
-    {% for item in SPGWC_IP_LIST %}
-      - "{{ item }}"
-    {% endfor %}
-#   BBU_PUBLIC_IP: "{{ BBU_PUBLIC_IP }}"
-  roles:
-    - pre-requirement
-    - bbu-configure
+# Runs the standard XOS synchronizer
+
+import importlib
+import os
+import sys
+from xosconfig import Config
+
+config_file = os.path.abspath(os.path.dirname(os.path.realpath(__file__)) + '/oaisim_config.yaml')
+Config.init(config_file, 'synchronizer-config-schema.yaml')
+
+synchronizer_path = os.path.join(os.path.dirname(
+    os.path.realpath(__file__)), "../../synchronizers/new_base")
+sys.path.append(synchronizer_path)
+mod = importlib.import_module("xos-synchronizer")
+mod.main()
+

@@ -1,4 +1,0 @@
-
-- name: set host name of vbbu
-  hostname:
-    name: "bbu"

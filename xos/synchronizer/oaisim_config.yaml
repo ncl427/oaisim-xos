@@ -14,11 +14,11 @@
 # limitations under the License.
 
 
-name: vbbu-synchronizer
+name: oaisim-synchronizer
 accessor:
   username: xosadmin@opencord.org
-  password: "@/opt/xos/services/vbbu/credentials/xosadmin@opencord.org"
-dependency_graph: "/opt/xos/synchronizers/vbbu/model-deps"
-steps_dir: "/opt/xos/synchronizers/vbbu/steps"
-sys_dir: "/opt/xos/synchronizers/vbbu/sys"
-model_policies_dir: "/opt/xos/synchronizers/vbbu/model_policies"
+  password: "@/opt/xos/services/oaisim/credentials/xosadmin@opencord.org"
+dependency_graph: "/opt/xos/synchronizers/oaisim/model-deps"
+steps_dir: "/opt/xos/synchronizers/oaisim/steps"
+sys_dir: "/opt/xos/synchronizers/oaisim/sys"
+model_policies_dir: "/opt/xos/synchronizers/oaisim/model_policies"
